@@ -4,13 +4,25 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define MAX_FD 256
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
 
-// PART1 - Libc Functions //
+/**
+ * @brief Get the next line object
+ *
+ * @param fd File descriptor to read from
+ * @return Read line: correct behavior || NULL: nothing else to read or an
+ * error occurred
+ */
+char	*get_next_line(int fd);
 
 /**
  * @brief Checks for an alphabetic character.
@@ -245,8 +257,6 @@ void	*ft_calloc(size_t nmemb, size_t size);
  */
 char	*ft_strdup(const char *s);
 
-// PART2 - Additional Functions //
-
 /**
  * @brief Allocates and returns a substring from the string S. The substring
  * begins at index START and is of maximum size LEN.
@@ -352,8 +362,6 @@ void	ft_putendl_fd(char *s, int fd);
  * @param fd The file descriptor on which to write.
  */
 void	ft_putnbr_fd(int n, int fd);
-
-// BONUS //
 
 /**
  * @brief Allocates and returns a new element. The variable CONTENT is

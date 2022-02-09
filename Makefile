@@ -6,7 +6,7 @@
 #    By: dchaves- <dchaves-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 14:31:22 by dchaves-          #+#    #+#              #
-#    Updated: 2022/02/09 15:24:57 by dchaves-         ###   ########.fr        #
+#    Updated: 2022/02/09 20:31:23 by dchaves-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ SRC_FILES 	:=	ft_isalpha.c \
 				ft_lstdelone.c \
 				ft_lstclear.c \
 				ft_lstiter.c \
-				ft_lstmap.c			
+				ft_lstmap.c	\
+				get_next_line.c		
 SOURCES		:=	$(addprefix $(SRC_PATH), $(SRC_FILES))
 OBJ_FILES	:=	$(patsubst %.c, %.o, $(SRC_FILES))
 OBJECTS 	:=	$(addprefix $(OBJ_PATH), $(OBJ_FILES))
@@ -78,7 +79,7 @@ OBJECTS 	:=	$(addprefix $(OBJ_PATH), $(OBJ_FILES))
 all:			$(NAME)
 
 # -> creates executable inside ./bin/
-$(NAME):		$(OBJECTS) 
+$(NAME):		$(OBJECTS)
 				$(LIB) $(NAME) $(OBJECTS)
 
 # -> creates object files inside ./obj/
