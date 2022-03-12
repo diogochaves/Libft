@@ -238,6 +238,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
 
 /**
+ * @brief Converts the initial portion of the string pointed to by STR to
+ * provided base (2, 8, 10 or 16). The string may begin with an arbitrary 
+ * amount of white space followed by a single optional '+' or '-' sign.
+ *
+ * @param str The string to convert.
+ * @param base The base for the conversion. 
+ * @return The integer value.
+ */
+int		ft_atoi_base(char *str, char *base);
+
+/**
  * @brief Allocates memory for an array of NMEMB elements of SIZE bytes each.
  * The memory is set to zero.
  *
